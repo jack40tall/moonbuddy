@@ -1,26 +1,9 @@
-UInvest 
+Moon Buddy
 
-** Team completed **
+Moon Buddy is an app that lets you connect to a brokerage and select a stock-trading bot for your investmet strategy.
+The stages of development are:
 
-FinTech company that offers wealth managment strategies. Users select their level of confort with risk, volatility and expected return and we systematically manage their portafolios. 
-Our fees are .1% for the basic plan and .25% for the advance plan. 
-
-Legal.
-We are registered with the U.S. Securities and Exchange Commission (SEC). As a robo advisor company we are held to the same standards of a human financial advisor. 
-
-Operation: 
-The project requires 3 members. 
-
-Technical: 
-We will have a table with users. A document NoSQL database will hold the individual clients investment information. We will use a basic investment strategy that will run once a day to make trades for our clients. 
-
-Social: 
-Money management is hard and the stock market can be complicated for new investors. We try to automate investments and generate wealth for our clients.
-
- 
-
-
-
-
-
-
+1. Develop a basic back end that allows you to register, create a basic bot for a single ticker, and run that bot analysis at regular intervals to notify you though websockets when to buy and sell.
+2. Develop a basic front end that allows you to register, login, and create a basic bot.
+3. Gain customer feedback
+4. Iterate, pivoting and adding desired features (connect to brokerage, social aspect, trading-bot store)
