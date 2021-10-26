@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/components/rounded_button.dart';
+import 'package:frontend/components/mat_button.dart';
 import 'package:frontend/constants.dart';
 import 'package:frontend/data_models/strategy_model.dart';
 import 'package:frontend/data_models/user.dart';
@@ -21,16 +21,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   String password;
   String passwordRetype;
   String firstName;
-  String middleName;
   String lastName;
   String dropdownValue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Create Account'),
-      ),
+      backgroundColor: kBackgroundDark,
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -39,85 +35,102 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Flexible(
-                child: Hero(
-                  tag: 'logo',
-                  child: Container(
-                    height: 200.0,
-                    child: Image.asset('../../assets/logo.png'),
+              Column(
+                children: <Widget>[
+                  Text(
+                    'Create Account',
+                    style: TextStyle(fontSize: 40, color: Colors.white),
                   ),
-                ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  Text('Sign up to gain access to the world of trading robots',
+                      style: TextStyle(color: kSecondaryPinkDark, fontSize: 16))
+                ],
               ),
               SizedBox(
                 height: 48.0,
               ),
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                textAlign: TextAlign.center,
-                onChanged: (value) {
-                  email = value;
-                },
-                decoration:
-                    TextFieldDecoration.copyWith(hintText: 'Enter your email'),
-              ),
+              TextFormField(
+                  cursorColor: kSecondaryPinkDark,
+                  style: TextStyle(color: kSecondaryPinkDark),
+                  keyboardType: TextInputType.emailAddress,
+                  onChanged: (value) {
+                    email = value;
+                  },
+                  decoration: InputDecoration(
+                      hintText: 'Email',
+                      hintStyle: TextStyle(color: kSecondaryPinkDark),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)))),
               SizedBox(
                 height: 8.0,
               ),
-              TextField(
-                obscureText: true,
-                textAlign: TextAlign.center,
-                controller: passwordText,
-                onChanged: (value) {
-                  password = value;
-                },
-                decoration: TextFieldDecoration.copyWith(
-                    hintText: 'Enter your password'),
-              ),
+              TextFormField(
+                  style: TextStyle(color: kSecondaryPinkDark),
+                  obscureText: true,
+                  controller: passwordText,
+                  onChanged: (value) {
+                    password = value;
+                  },
+                  decoration: InputDecoration(
+                      hintText: 'Password',
+                      hintStyle: TextStyle(color: kSecondaryPinkDark),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)))),
               SizedBox(
                 height: 8.0,
               ),
-              TextField(
-                obscureText: true,
-                textAlign: TextAlign.center,
-                controller: passwordRetypeText,
-                onChanged: (value) {
-                  passwordRetype = value;
-                },
-                decoration: TextFieldDecoration.copyWith(
-                    hintText: 'Re-enter your password'),
-              ),
+              TextFormField(
+                  style: TextStyle(color: kSecondaryPinkDark),
+                  controller: passwordRetypeText,
+                  obscureText: true,
+                  onChanged: (value) {
+                    passwordRetype = value;
+                  },
+                  decoration: InputDecoration(
+                      hintText: 'Re-enter your password',
+                      hintStyle: TextStyle(color: kSecondaryPinkDark),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)))),
               SizedBox(
                 height: 8.0,
               ),
-              TextField(
-                textAlign: TextAlign.center,
-                onChanged: (value) {
-                  firstName = value;
-                },
-                decoration:
-                    TextFieldDecoration.copyWith(hintText: 'First name'),
-              ),
+              TextFormField(
+                  cursorColor: kSecondaryPinkDark,
+                  style: TextStyle(color: kSecondaryPinkDark),
+                  onChanged: (value) {
+                    firstName = value;
+                  },
+                  decoration: InputDecoration(
+                      hintText: 'First name',
+                      hintStyle: TextStyle(color: kSecondaryPinkDark),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)))),
               SizedBox(
                 height: 8.0,
               ),
-              TextField(
-                textAlign: TextAlign.center,
-                onChanged: (value) {
-                  middleName = value;
-                },
-                decoration: TextFieldDecoration.copyWith(
-                    hintText: 'Middle name (optional)'),
-              ),
-              SizedBox(
-                height: 8.0,
-              ),
-              TextField(
-                textAlign: TextAlign.center,
-                onChanged: (value) {
-                  lastName = value;
-                },
-                decoration: TextFieldDecoration.copyWith(hintText: 'Last name'),
-              ),
+              TextFormField(
+                  cursorColor: kSecondaryPinkDark,
+                  style: TextStyle(color: kSecondaryPinkDark),
+                  onChanged: (value) {
+                    lastName = value;
+                  },
+                  decoration: InputDecoration(
+                      hintText: 'Last name',
+                      hintStyle: TextStyle(color: kSecondaryPinkDark),
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: kSecondaryPinkDark)))),
               SizedBox(
                 height: 8.0,
               ),
@@ -160,7 +173,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               SizedBox(
                 height: 24.0,
               ),
-              RoundedButton(
+              MatButton(
                 title: 'Register',
                 colour: Colors.blueAccent,
                 onPressed: () => registerIsClicked(),
@@ -232,7 +245,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               emailAddress: this.email,
               password: this.password,
               firstName: this.firstName,
-              middleName: this.middleName,
+              middleName: 'REMOVE THIS',
               lastName: this.lastName,
               investmentStrategy: selectedStrategy));
       var response = await result;
@@ -283,12 +296,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   void showPrompt(String prompt) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Colors.red,
         content: Text(prompt,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 26,
-                color: Colors.white,
+                fontSize: 16,
+                color: kBackgroundDark,
                 fontWeight: FontWeight.w400)),
       ),
     );
