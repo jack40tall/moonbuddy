@@ -24,9 +24,21 @@ class _SummaryScreen extends State<DashboardScreen> {
     return Scaffold(
       backgroundColor: kBackgroundDark,
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.fromLTRB(20, 60, 20, 20),
         child: Column(
           children: <Widget>[
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                "Trading Bots",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontFamily: 'Horizon',
+                ),
+              ),
+              Icon(Icons.person, color: Colors.white)
+            ]),
+            SizedBox(height: 13.0),
             Text(
               "SEARCH BAR",
               style: TextStyle(
@@ -35,7 +47,7 @@ class _SummaryScreen extends State<DashboardScreen> {
                 fontFamily: 'Horizon',
               ),
             ),
-            SizedBox(height: 13.0),
+            SizedBox(height: 20.0),
 
             /* ADD LATER */
 
